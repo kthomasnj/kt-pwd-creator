@@ -36,9 +36,10 @@
 
 ## Deployed Site
 ---
+
 https://kthomasnj.github.io/password-generator/
 
-
+![Live Website](./assets/images/pw-live-site.png)
 
 ---
 © 2022 Keith S. Thomas
