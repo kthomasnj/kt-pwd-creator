@@ -23,42 +23,22 @@ function generatePassword() {
     var number = "0123456789";
     var specChar = "~!@#$%^&*()_+-=<>?,.\/";
     var newPwdString = "";
+    var pwd = "";
 
-    if (pwdUpCase === true && pwdLwrCase === true && pwdNumber === true && pwdSpecChar === true) {
-      newPwdString = uppercase + lowercase + number + specChar;
-    } else if (pwdUpCase === true && pwdLwrCase === true && pwdNumber === true) {
-      newPwdString = uppercase + lowercase + number;
-    } else if (pwdUpCase === true && pwdLwrCase === true && pwdSpecChar === true) {
-      newPwdString = uppercase + lowercase + specChar;
-    } else if (pwdUpCase === true && pwdSpecChar === true && pwdNumber === true) {
-      newPwdString = uppercase + number + specChar;
-    } else if (pwdLwrCase === true && pwdSpecChar === true && pwdNumber === true) {
-      newPwdString = lowercase + number + specChar;
-    } else if (pwdNumber === true && pwdSpecChar === true) {
-      newPwdString = number + specChar;
-    } else if (pwdLwrCase === true && pwdNumber === true) {
-      newPwdString = lowercase + number;
-    } else if (pwdUpCase === true && pwdLwrCase === true) {
-      newPwdString = uppercase + lowercase;
-    } else if (pwdUpCase === true && pwdNumber === true) {
-      newPwdString = uppercase + number;
-    } else if (pwdUpCase === true && pwdSpecChar === true) {
-      newPwdString = uppercase + specChar;
-    } else if (pwdLwrCase === true && pwdSpecChar === true) {
-      newPwdString = lowercase + specChar;
-    } else if (pwdUpCase === true && pwdSpecChar === true) {
-      newPwdString = uppercase + specChar;
-    } else if (pwdUpCase === true) {
-      newPwdString = uppercase;
-    } else if (pwdLwrCase === true) {
-      newPwdString = lowercase;
-    } else if (pwdNumber === true) {
-      newPwdString = number;
-    } else if (pwdSpecChar === true) {
-      newPwdString = specChar;
-    } else {
+    // Loop through 4 variables to produce password options
 
-      return alert("Uppercase, Lowercase, Number and/or Special Character is required to generate a password.");
+    for (i = 0; i < pwdLength; i++) {
+      console.log(i + ") New Password: " + newPwdString);
+      if (pwdUpCase === true) {
+        newPwdString += uppercase.charAt(Math.floor(Math.random() * 10));
+      } if (pwdLwrCase === true) {
+        newPwdString += lowercase.charAt(Math.floor(Math.random() * 10));
+      } if (pwdNumber === true) {
+        newPwdString += number.charAt(Math.floor(Math.random() * 10));
+      } if (pwdSpecChar === true) {
+        newPwdString += specChar.charAt(Math.floor(Math.random() * 10));
+      }  
+
     }
 
 
