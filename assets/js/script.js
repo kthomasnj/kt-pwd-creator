@@ -10,6 +10,8 @@ function writePassword() {
   passwordText.value = password;
 }
 
+// Generate Password
+
 function generatePassword() {
   var pwdLength = window.prompt("How many characters do you require in your password? - Password should be at least 8 characters and no more than 128 characters");
 
@@ -25,12 +27,12 @@ function generatePassword() {
     var newPwdString = "";
     var pwd = "";
 
-    // Loop through 4 variables to produce password options
-
     if (pwdUpCase === !true && pwdLwrCase === !true && pwdSpecChar === !true && pwdNumber === !true) {
       alert("You must choose a password option to generate a password.");
       return pwd = "You must choose a password option to generate a password.";
     }
+
+    // Loop through 4 variables to produce password options
 
     for (i = 0; i < pwdLength; i++) {
       console.log(i + ") New Password: " + newPwdString);
@@ -42,17 +44,22 @@ function generatePassword() {
         newPwdString += number.charAt(Math.floor(Math.random() * 10));
       } if (pwdSpecChar === true) {
         newPwdString += specChar.charAt(Math.floor(Math.random() * 10));
-      }  
-
+      }      
     }
 
+    // Reduce password to requested length
+    
+    for (i = 0; i < pwdLength; i++) {
+      console.log(i + ") New Password: " + pwd);
+      pwd += newPwdString.charAt(Math.floor(Math.random() * newPwdString.length))
+    }
 
+    return pwd;
 
   } else {
     alert("Password is NOT between 8 and 128 charcters.")
-    return;
+    return pwd ="Password is NOT between 8 and 128 charcters.";
   }
 }
-
 
 generateBtn.addEventListener("click", writePassword);
