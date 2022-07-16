@@ -37,7 +37,7 @@
 ## Deployed Site
 ---
 
-https://kthomasnj.github.io/password-generator/
+https://kthomasnj.github.io/kt-pwd-creator/
 
 ![Live Website](./assets/images/pw-live-site.png)
 
